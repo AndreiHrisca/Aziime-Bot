@@ -189,5 +189,5 @@ client.on('message', msg => {
 //        member.ban.id(256827042278932480)
 //    }
 
-const token = 'NjcyOTc5NjA1ODk1OTA1MzEy.XjTb5w.BroswnAjHVLjtMoYHYAmF8pFvj8';
+const token = 'NjcyOTc5NjA1ODk1OTA1MzEy.Xj9kdw.O85842f8iKF5CXcnQLnGdNoGsCE';
 client.login(token);

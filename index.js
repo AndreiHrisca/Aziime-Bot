@@ -89,8 +89,9 @@ client.on('message', msg => {
     //console.log(msg.content)
         if (msg.content === '/help') {
           var embed = new Discord.RichEmbed()
-            .addField("WLO commmands","```\n/mant``````\n/eva```",true)
-            .addField("server commmands","```\ndate``````\nneata``",true)
+            .setColor('#0099ff')
+            .addField("WLO commmands","```\n/mant``` ```\n/eva``` ```\n/potiuni``` ```\n/fred``` ```\n/victoria``` ```\n/critquest``` ```\n/stele``` ```\n/market``` ```\n/pet``` ```\n/error```",true)
+            .addField("server commmands","```\ndate``` ```\nneata``` ```\n/forum``` ```\n/invite```",true)
             msg.channel.sendEmbed(embed);
         }
 

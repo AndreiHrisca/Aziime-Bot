@@ -89,8 +89,8 @@ client.on('message', msg => {
     //console.log(msg.content)
         if (msg.content === '/help') {
           var embed = new Discord.RichEmbed()
-            .addField("WLO commmands","/mant /eva /potiuni",true)
-            .addField("server commmands","/mant /eva /potiuni",true)
+            .addField("WLO commmands","```\n/mant``````\n/eva```",true)
+            .addField("server commmands","```\ndate``````\nneata``",true)
             msg.channel.sendEmbed(embed);
         }
 

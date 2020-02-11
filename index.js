@@ -88,6 +88,9 @@ const momentoact = new Date();
 // Bot listenning messages
 client.on('message', msg => {
     //console.log(msg.content)
+        if (msg.content === '/mant') {
+            msg.reply('Mentenanta marti si miercuri la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00 @here.' )
+        }
 
         if (msg.content === 'ping') {
                 msg.reply('pong');

@@ -91,7 +91,7 @@ client.on('message', msg => {
           var embed = new Discord.RichEmbed()
             .setColor('#0099ff')
             .addField("WLO commmands","```\n/mant``` ```\n/eva``` ```\n/potiuni``` ```\n/fred``` ```\n/victoria``` ```\n/critquest``` ```\n/stele``` ```\n/market``` ```\n/pet``` ```\n/error```",true)
-            .addField("server commmands","```\ndate``` ```\nneata``` ```\n/forum``` ```\n/invite```",true)
+            .addField("SERVER commmands","```\n/date``` ```\nneata``` ```\n/forum``` ```\n/invite```",true)
             msg.channel.sendEmbed(embed);
         }
 
@@ -104,7 +104,7 @@ client.on('message', msg => {
                 msg.reply('pong');
         }
 
-        if (msg.content === 'date') {
+        if (msg.content === '/date') {
           msg.reply(getToday());
         }
 

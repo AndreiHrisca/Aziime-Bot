@@ -89,7 +89,7 @@ const momentoact = new Date();
 client.on('message', msg => {
     //console.log(msg.content)
         if (msg.content === '/mant') {
-            msg.reply('Mentenanta marti si miercuri la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00 @here.' )
+            msg.reply('Mentenanta marti si miercuri la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
         }
 
         if (msg.content === 'ping') {

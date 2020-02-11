@@ -90,6 +90,7 @@ client.on('message', msg => {
         if (msg.content === '/help') {
           var embed = new Discord.RichEmbed()
             .addField("WLO commands","/mant /eva /potiuni")
+            msg.channel.sendEmbed(embed);
         }
 
 
@@ -163,17 +164,7 @@ client.on('message', msg => {
             msg.channel.send('http://wlopserver.com/thread/35/pet-level-guide');
         }
 
-        if (msg.content === '!author') {
-            const embed = new RichEmbed()
-                // .setTitle('A pretty message')
-                //.setColor(0xFF0000)
-                // .setDescription('Hello', msg.author);
-                .addField('Author', 'Andrei', true)
-                .addField('Version', '1.0', true)
-                .addField('Contact', 'andr3y_30@yahoo.com', false)
-                //.setAuthor('Andrei', '');
-            msg.channel.send(embed);
-        }
+
 
         // Deleting 100 messages
         if (msg.content.startsWith('!clear')) {

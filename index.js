@@ -4,7 +4,6 @@
 //import cron from 'node-cron';
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const embed = new Discord.RichEmbed()
 const cron = require("node-cron");
 
 
@@ -91,7 +90,6 @@ client.on('message', msg => {
         if (msg.content === '/help') {
           var embed = new Discord.RichEmbed()
             .addField("WLO commands","/mant /eva /potiuni")
-            .addField("Server commands","neata date")
         }
 
 

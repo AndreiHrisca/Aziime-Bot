@@ -88,8 +88,15 @@ const momentoact = new Date();
 // Bot listenning messages
 client.on('message', msg => {
     //console.log(msg.content)
+        if (msg.content === '/help') {
+          var embed = new Discord.RichEmbed()
+            .addField("WLO commands","/mant /eva /potiuni")
+            .addField("Server commands","neata date")
+        }
+
+
         if (msg.content === '/mant') {
-            msg.reply('Mentenanta marti si miercuri la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
+            msg.reply('Mentenanta marti si joi la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
         }
 
         if (msg.content === 'ping') {
@@ -161,7 +168,7 @@ client.on('message', msg => {
         if (msg.content === '!author') {
             const embed = new RichEmbed()
                 // .setTitle('A pretty message')
-                .setColor(0xFF0000)
+                //.setColor(0xFF0000)
                 // .setDescription('Hello', msg.author);
                 .addField('Author', 'Andrei', true)
                 .addField('Version', '1.0', true)

@@ -55,24 +55,24 @@ function mueveReloj(){
 }
 
 //Mantenanta Marti
-cron.schedule("1 1 2 * * 2", function() {
+cron.schedule("1 1 1 * * 2", function() {
    console.log("maintenance");
    client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30 @here.');
  });
 //Mantentanta Miercuri
-cron.schedule("1 1 2 * * 4", function() {
+cron.schedule("1 1 1 * * 4", function() {
    console.log("maintenance");
    client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30 @here.');
  });
 
  //Mantentanta Sambata
- cron.schedule("1 30 0 * * 6", function() {
+ cron.schedule("1 30 22 * * 5", function() {
     console.log("maintenance");
     client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
   });
 
   //Mantentanta Duminica
-  cron.schedule("1 1 1 * * 0", function() {
+  cron.schedule("1 1 23 * * 6", function() {
      console.log("maintenance");
      client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
    });

@@ -4,6 +4,7 @@
 //import cron from 'node-cron';
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const embed = new Discord.RichEmbed()
 const cron = require("node-cron");
 
 
@@ -27,6 +28,7 @@ function getToday() {
     let suffix = [`st`, `nd`, `rd`];
     return `${today.getDate()}${suffix[today.getDate()] || `th`} of ${months[today.getMonth()]}`;
 }
+
 
 function mueveReloj(){
     momentoActual = new Date()
@@ -54,24 +56,24 @@ function mueveReloj(){
 }
 
 //Mantenanta Marti
-cron.schedule("1 1 1 * * 2", function() {
+cron.schedule("1 1 2 * * 2", function() {
    console.log("maintenance");
    client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30 @here.');
  });
 //Mantentanta Miercuri
-cron.schedule("1 1 1 * * 4", function() {
+cron.schedule("1 1 2 * * 4", function() {
    console.log("maintenance");
    client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30 @here.');
  });
 
  //Mantentanta Sambata
- cron.schedule("1 30 22 * * 5", function() {
+ cron.schedule("1 30 0 * * 6", function() {
     console.log("maintenance");
     client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
   });
 
   //Mantentanta Duminica
-  cron.schedule("1 1 23 * * 6", function() {
+  cron.schedule("1 1 1 * * 0", function() {
      console.log("maintenance");
      client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
    });
@@ -87,24 +89,17 @@ const momentoact = new Date();
 // Bot listenning messages
 client.on('message', msg => {
     //console.log(msg.content)
-        if (msg.content === '/help') {
-          var embed = new Discord.RichEmbed()
-            .setColor('#0099ff')
-            .addField("WLO commmands","```\n/mant``` ```\n/eva``` ```\n/potiuni``` ```\n/fred``` ```\n/victoria``` ```\n/critquest``` ```\n/stele``` ```\n/market``` ```\n/pet``` ```\n/error```",true)
-            .addField("SERVER commmands","```\n/date``` ```\nneata``` ```\n/forum``` ```\n/invite```",true)
-            msg.channel.sendEmbed(embed);
-        }
-
-
-        if (msg.content === '/mant') {
-            msg.reply('Mentenanta marti si joi la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
+        if (msg.content === '/ask') {
+          let facts = ["da", "nu", "idk"];
+          let fact = Math.floor(Math.random() * facts.length);
+          msg.channel.send(facts[fact]);
         }
 
         if (msg.content === 'ping') {
                 msg.reply('pong');
         }
 
-        if (msg.content === '/date') {
+        if (msg.content === 'date') {
           msg.reply(getToday());
         }
 
@@ -166,7 +161,17 @@ client.on('message', msg => {
             msg.channel.send('http://wlopserver.com/thread/35/pet-level-guide');
         }
 
-
+        if (msg.content === '!author') {
+            const embed = new RichEmbed()
+                // .setTitle('A pretty message')
+                .setColor(0xFF0000)
+                // .setDescription('Hello', msg.author);
+                .addField('Author', 'Andrei', true)
+                .addField('Version', '1.0', true)
+                .addField('Contact', 'andr3y_30@yahoo.com', false)
+                //.setAuthor('Andrei', '');
+            msg.channel.send(embed);
+        }
 
         // Deleting 100 messages
         if (msg.content.startsWith('!clear')) {

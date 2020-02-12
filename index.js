@@ -89,7 +89,7 @@ const momentoact = new Date();
 // Bot listenning messages
 client.on('message', msg => {
     //console.log(msg.content)
-        if (msg.content === '/ask') {
+        if (msg.content.includes === '/ask') {
           let facts = ["da", "nu", "idk"];
           let fact = Math.floor(Math.random() * facts.length);
           msg.channel.send(facts[fact]);

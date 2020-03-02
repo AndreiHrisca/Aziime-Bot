@@ -129,7 +129,7 @@ client.on('message', msg => {
         }
 
         if (msg.content === 'neata') {
-            msg.channel.send(`Buna dimineata si tie ${msg.author} !!! Azi e ` + getToday() + respond()) ;
+            msg.channel.send(`Buna dimineata si tie ${msg.author} !!! Azi e ` + getToday()+ '. ' + respond()) ;
         }
 
         // QUESTS / LINKS-------------------------------------------------------------------

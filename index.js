@@ -21,21 +21,22 @@ client.on('ready', () => {
 
 
 // FUNCIONES ------------------------------------------------------------------------------------------------------------------------------
-function getToday() {
+/*function getToday() {
     let today = new Date();
     let months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`];
     let suffix = [`st`, `nd`, `rd`];
     return `${today.getDate()}${months[today.getMonth()]}`;
+    `${today.getDate()}${suffix[today.getDate()] || `th`} of ${months[today.getMonth()]}`
 }
-/*
-`${today.getDate()}${suffix[today.getDate()] || `th`} of ${months[today.getMonth()]}`
+*/
+
 
 
 function getToday() {
   let today = new Date();
   let months = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noembrie', 'Decembrie'];
-  return `${today.getDate()}${months[today.getMonth()]}`;
-}*/
+  return `${today.getDate()} ${months[today.getMonth()]}`;
+}
 
 function mueveReloj(){
     momentoActual = new Date()

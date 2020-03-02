@@ -34,7 +34,7 @@ client.on('ready', () => {
 
 function getToday() {
   let today = new Date();
-  let months = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noembrie', 'Decembrie'];
+  let months = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noiembrie', 'Decembrie'];
   return `${today.getDate()} ${months[today.getMonth()]}`;
 }
 

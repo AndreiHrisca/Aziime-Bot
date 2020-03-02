@@ -25,8 +25,17 @@ function getToday() {
     let today = new Date();
     let months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`];
     let suffix = [`st`, `nd`, `rd`];
-    return `${today.getDate()}${suffix[today.getDate()] || `th`} of ${months[today.getMonth()]}`;
+    return `${today.getDate()}${months[today.getMonth()]}`;
 }
+/*
+`${today.getDate()}${suffix[today.getDate()] || `th`} of ${months[today.getMonth()]}`
+
+
+function getToday() {
+  let today = new Date();
+  let months = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noembrie', 'Decembrie'];
+  return `${today.getDate()}${months[today.getMonth()]}`;
+}*/
 
 function mueveReloj(){
     momentoActual = new Date()
@@ -91,7 +100,7 @@ client.on('message', msg => {
           var embed = new Discord.RichEmbed()
             .setColor('#0099ff')
             .addField("WLO commmands","```\n/mant``` ```\n/eva``` ```\n/potiuni``` ```\n/fred``` ```\n/victoria``` ```\n/critquest``` ```\n/stele``` ```\n/market``` ```\n/pet``` ```\n/error```",true)
-            .addField("SERVER commmands","```\n/date``` ```\nneata``` ```\n/forum``` ```\n/invite```",true)
+            .addField("SERVER commmands","```\n/date``` ```\nneata``` ```\n/forum``` ```\n/invite``` ```\n/ask```",true)
             msg.channel.sendEmbed(embed);
         }
 

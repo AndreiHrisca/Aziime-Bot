@@ -89,11 +89,10 @@ cron.schedule("1 1 1 * * 4", function() {
 
 
 const momentoact = new Date();
-function resp() {
+
   const responses = ['Sa ai o zi minunata!!','Multa bafta ;).', 'Uitate in oglinda inainte sa iesi afara!!', 'Nu uita sa pui haine pe tine.', 'Uneori ai succes…iar alteori înveți.'];
   const respond = () => responses[Math.floor(Math.random() * responses.length)]
   if (true) respond()
-}
 
 
 
@@ -130,7 +129,7 @@ client.on('message', msg => {
         }
 
         if (msg.content === 'neata') {
-            msg.channel.send(`Buna dimineata si tie ${msg.author} !!! Azi e ` + getToday() + resp()) ;
+            msg.channel.send(`Buna dimineata si tie ${msg.author} !!! Azi e ` + getToday() + respond()) ;
         }
 
         // QUESTS / LINKS-------------------------------------------------------------------

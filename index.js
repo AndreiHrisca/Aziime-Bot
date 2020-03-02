@@ -166,7 +166,11 @@ client.on('message', msg => {
             msg.channel.send('http://wlopserver.com/thread/35/pet-level-guide');
         }
 
-
+        if (msg.content.startsWith('/ask')) {
+          let facts = ["yeahh!!", "nahh", "idk"];
+          let fact = Math.floor(Math.random() * facts.length);
+          msg.channel.send(facts[fact]);
+        }
 
         // Deleting 100 messages
         if (msg.content.startsWith('!clear')) {

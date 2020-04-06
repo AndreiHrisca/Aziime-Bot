@@ -5,8 +5,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const cron = require("node-cron");
-var cheerio = require("cheerio");
-var request = require("request");
+
 
 
 client.on('ready', () => {
@@ -128,12 +127,13 @@ client.on('message', msg => {
         }
 
 
+
         if (msg.content === '/mant') {
             msg.reply('Mentenanta marti si joi la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
         }
 
         if (msg.content === 'ping') {
-                msg.reply('pong');
+                msg.reply('pongggg');
         }
 
         if (msg.content === '/date') {

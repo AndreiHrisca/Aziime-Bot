@@ -5,7 +5,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const cron = require("node-cron");
-
+var cheerio = require("cheerio");
+var request = require("request");
 
 
 client.on('ready', () => {
@@ -75,13 +76,13 @@ cron.schedule("1 1 1 * * 4", function() {
  });
 
  //Mantentanta Sambata
- cron.schedule("1 30 22 * * 5", function() {
+ cron.schedule("1 30 21 * * 5", function() {
     console.log("maintenance");
     client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
   });
 
   //Mantentanta Duminica
-  cron.schedule("1 1 23 * * 6", function() {
+  cron.schedule("1 1 22 * * 6", function() {
      console.log("maintenance");
      client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
    });
@@ -100,9 +101,74 @@ const momentoact = new Date();
 
 
 
+
+
+
+ //--------------------------------------------------------------------------------------------------------------------------------------------- Get any image function
+ function image(message, parts) {
+
+    /* extract search query from message */
+
+    var search = parts.slice(1).join(" "); // Slices of the command part of the array ["!image", "cute", "dog"] ---> ["cute", "dog"] ---> "cute dog"
+
+    var options = {
+        url: "http://results.dogpile.com/serp?qc=images&q=" + search,
+        method: "GET",
+        headers: {
+            "Accept": "text/html",
+            "User-Agent": "Chrome"
+        }
+    };
+    request(options, function(error, response, responseBody) {
+        if (error) {
+            // handle error
+            return;
+        }
+
+        /* Extract image URLs from responseBody using cheerio */
+
+        $ = cheerio.load(responseBody); // load responseBody into cheerio (jQuery)
+
+        // In this search engine they use ".image a.link" as their css selector for image links
+        var links = $(".image a.link");
+
+        // We want to fetch the URLs not the DOM nodes, we do this with jQuery's .attr() function
+        // this line might be hard to understand but it goes thru all the links (DOM) and stores each url in an array called urls
+        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+        console.log(urls);
+        if (!urls.length) {
+            // Handle no results
+            return;
+        }
+
+        // Send result
+        message.channel.send( urls[0] );
+    });
+
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 // Bot listenning messages
 client.on('message', msg => {
     //console.log(msg.content)
+
+    var parts = message.content.split(" "); // Splits message into an array for every space, our layout: "<command> [search query]" will become ["<command>", "search query"]
+
+/* Simple command manager */
+if (parts[0] === "!image") { // Check if first part of message is image command
+
+   // call the image function
+   image(message, parts); // Pass requester message to image function
+
+}
+
+
+
+
+
         if (msg.content === '/help') {
           var embed = new Discord.RichEmbed()
             .setColor('#0099ff')
@@ -187,6 +253,9 @@ client.on('message', msg => {
           let fact = Math.floor(Math.random() * facts.length);
           msg.channel.send(facts[fact]);
         }
+
+
+
 
         // Deleting 100 messages
         if (msg.content.startsWith('!clear')) {

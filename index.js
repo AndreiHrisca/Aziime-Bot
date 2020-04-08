@@ -1,7 +1,3 @@
-
-var cheerio = require("cheerio"); /* Used to extract html content, based on jQuery || install with npm install cheerio */
-var request = require("request"); /* Used to make requests to URLs and fetch response  || install with npm install request */
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const cron = require("node-cron");
@@ -21,7 +17,6 @@ client.on('ready', () => {
 
 
 // FUNCIONES ------------------------------------------------------------------------------------------------------------------------------
-
 
 
 
@@ -68,13 +63,13 @@ cron.schedule("1 1 1 * * 4", function() {
  });
 
  //Mantentanta Sambata
- cron.schedule("1 30 21 * * 5", function() {
+ cron.schedule("1 30 22 * * 5", function() {
     console.log("maintenance");
     client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
   });
 
   //Mantentanta Duminica
-  cron.schedule("1 1 22 * * 6", function() {
+  cron.schedule("1 1 23 * * 6", function() {
      console.log("maintenance");
      client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
    });
@@ -93,24 +88,9 @@ const momentoact = new Date();
 
 
 
-
-
-
- //--------------------------------------------------------------------------------------------------------------------------------------------- Get any image function
-
-
-    //-----------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
 // Bot listenning messages
 client.on('message', msg => {
     //console.log(msg.content)
-
-
-
-
         if (msg.content === '/help') {
           var embed = new Discord.RichEmbed()
             .setColor('#0099ff')
@@ -120,26 +100,12 @@ client.on('message', msg => {
         }
 
 
-
-        var parts = message.content.split(" ");
-        if (parts[0] === "!image") { // Check if first part of message is image command
-
-                // call the image function
-                image(message, parts); // Pass requester message to image function
-
-            }
-
-
-
-
-
-
         if (msg.content === '/mant') {
             msg.reply('Mentenanta marti si joi la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
         }
 
         if (msg.content === 'ping') {
-                msg.reply('pongggg');
+                msg.reply('pong');
         }
 
         if (msg.content === '/date') {
@@ -173,7 +139,7 @@ client.on('message', msg => {
         }
 
         if (msg.content === '/critquest') {
-            msg.channel.send('https://nwloforums.com/board/4/guides');
+            msg.channel.send(' bad link ');
         }
 
         if (msg.content === '/stele') {
@@ -210,9 +176,6 @@ client.on('message', msg => {
           msg.channel.send(facts[fact]);
         }
 
-
-
-
         // Deleting 100 messages
         if (msg.content.startsWith('!clear')) {
             async function clear() {
@@ -231,10 +194,6 @@ client.on('message', msg => {
 });
 
 
-//    if (msg.author.id == '256827042278932480' && msg.contant.includes ==='kick') {
-//        member.ban().then((Patrick)),
-//        member.ban.id(256827042278932480)
-//    }
 
 const token = 'NjcyOTc5NjA1ODk1OTA1MzEy.Xj9kdw.O85842f8iKF5CXcnQLnGdNoGsCE';
 client.login(token);

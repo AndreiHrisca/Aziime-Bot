@@ -94,11 +94,14 @@ client.on('message', msg => {
         if (msg.content === '/help') {
           var embed = new Discord.RichEmbed()
             .setColor('#0099ff')
-            .addField("WLO commmands","```\n/mant``` ```\n/eva``` ```\n/potiuni``` ```\n/fred``` ```\n/victoria``` ```\n/critquest``` ```\n/stele``` ```\n/market``` ```\n/pet``` ```\n/error```",true)
+            .addField("WLO commmands","```\n/mant``` ```\n/eva``` ```\n/potiuni``` ```\n/fred``` ```\n/victoria``` ```\n/critquest``` ```\n/stele``` ```\n/newacc ```\n/market``` ```\n/pet``` ```\n/error```",true)
             .addField("SERVER commmands","```\n/date``` ```\nneata``` ```\n/forum``` ```\n/invite``` ```\n/ask```",true)
             msg.channel.sendEmbed(embed);
         }
 
+        if (msg.content === '/newacc') {
+          msg.reply('https://nwloforums.com/thread/53/create-account-new-wonderland-online')
+        }
 
         if (msg.content === '/mant') {
             msg.reply('Mentenanta marti si joi la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
@@ -139,7 +142,7 @@ client.on('message', msg => {
         }
 
         if (msg.content === '/critquest') {
-            msg.channel.send(' bad link ');
+            msg.channel.send('https://nwloforums.com/board/4/guides');
         }
 
         if (msg.content === '/stele') {

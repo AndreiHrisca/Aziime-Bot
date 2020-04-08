@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "cron": "^1.8.2",
     "discord.js": "^11.5.1",
     "node-cron": "^2.0.3",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {

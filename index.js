@@ -26,6 +26,37 @@ function getToday() {
   let months = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noiembrie', 'Decembrie'];
   return `${today.getDate()} ${months[today.getMonth()]}`;
 }
+// TEST ------------------------------------------------------------------
+function getday(){
+
+  let day;
+  switch (new Date().getDay()) {
+    case 0:
+      day = "Azi e maintenance la ora 02:00."; //Sunday
+      break;
+    case 1:
+      day = "Azi nu e maintenance."; //Monday
+      break;
+    case 2:
+      day = "Azi e maintenance la ora 03:30."; //Tuesday
+      break;
+    case 3:
+      day = "Azi nu e maintenance."; //Wednesday
+      break;
+    case 4:
+      day = "Azi e maintenance la ora 03:30."; //Thursday
+      break;
+    case 5:
+      day = "Azi nu e maintenance."; //Friday
+      break;
+    case  6:
+      day = "Azi e maintenance la ora 02:00."; //Saturday
+  }
+  return day;
+}
+//------------------------------------------------------------------------
+
+
 
 function mueveReloj(){
     momentoActual = new Date()
@@ -105,7 +136,7 @@ client.on('message', msg => {
         }
 
         if (msg.content === '/mant') {
-            msg.reply('Mentenanta marti si joi la ora 3:30. '+ 'Mentenanta sambata si duminica la ora 2:00.' )
+            msg.reply(getday())
         }
 
         if (msg.content === 'ping') {

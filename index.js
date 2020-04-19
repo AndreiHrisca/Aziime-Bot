@@ -20,6 +20,7 @@ client.on('ready', () => {
 
 
 
+
 function getToday() {
   let today = new Date();
   let months = ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noiembrie', 'Decembrie'];
@@ -54,24 +55,24 @@ function mueveReloj(){
 //Mantenanta Marti
 cron.schedule("1 1 1 * * 2", function() {
    console.log("maintenance");
-   client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30 @here.');
+   client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30.');
  });
 //Mantentanta Miercuri
 cron.schedule("1 1 1 * * 4", function() {
    console.log("maintenance");
-   client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30 @here.');
+   client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 3:30.');
  });
 
  //Mantentanta Sambata
  cron.schedule("1 30 22 * * 5", function() {
     console.log("maintenance");
-    client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
+    client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00.');
   });
 
   //Mantentanta Duminica
   cron.schedule("1 1 23 * * 6", function() {
      console.log("maintenance");
-     client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00 @here.');
+     client.channels.find(c => c.name === 'announcement').send('Mentenanta la ora 2:00.');
    });
 
 

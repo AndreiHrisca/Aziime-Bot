@@ -27,6 +27,9 @@ function getToday() {
   return `${today.getDate()} ${months[today.getMonth()]}`;
 }
 // TEST ------------------------------------------------------------------
+
+/*
+
 function getday(){
 
   let day;
@@ -54,6 +57,10 @@ function getday(){
   }
   return day;
 }
+
+*/
+
+
 //------------------------------------------------------------------------
 
 
@@ -136,7 +143,7 @@ client.on('message', msg => {
         }
 
         if (msg.content === '/maint') {
-            msg.reply(getday())
+            msg.reply('Pentru a folosi "/maint", plateste versiunea PREMIUM al botului.')
         }
 
         if (msg.content === 'ping') {

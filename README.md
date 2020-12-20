@@ -1,2 +1,4 @@
 # Aziime-Bot
-hosting bot
+Bot for a Discrod Channel.
+
+Hosted in Heroku.

@@ -2,7 +2,7 @@
 
 Bot for a Discrod Channel.
 
-With commands to give information of a video game.
-Automation of the maintenance time of the videogame.
+Personal project of a funny bot that can make your day better.
+It alerts about maintenance and gives information about the video game database.
 
 Hosted in Heroku.
